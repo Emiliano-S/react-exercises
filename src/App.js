@@ -10,7 +10,7 @@ export class App extends React.Component{
             <div>
                 <Hello />
                 <Welcome name="Jhon" age={27}/>
-                <ClickCounter incrementAmount = {2} initialValue = {10} incrementInterval = {500} />
+                <ClickCounter incrementAmount={2} initialValue = {10} incrementInterval = {500} />
                 <ClickTracker />
             </div>
         );
