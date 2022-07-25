@@ -18,6 +18,8 @@ export class Counter extends React.Component{
         },this.props.incrementInterval ?? 1000);
     }
 
+
+    
     render(){
         return <CounterDisplay counter = {this.state.counter} />
     }
