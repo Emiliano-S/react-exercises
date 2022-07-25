@@ -6,9 +6,7 @@ export class Counter extends React.Component{
         counter: this.props.initialValue ?? 0,
     }
 
-    constructor(props){
-        super(props)
-
+    componentDidMount(){
         setInterval(()=>{
             this.setState((state) =>{
                 return{
@@ -18,8 +16,6 @@ export class Counter extends React.Component{
         },this.props.incrementInterval ?? 1000);
     }
 
-
-    
     render(){
         return <CounterDisplay counter = {this.state.counter} />
     }
