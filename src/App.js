@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
-import { Welcome } from './Welcome';
+import { TodoList } from './TodoList';
+
 
 export class App extends React.Component{
     onLoginData = (state) =>{
@@ -9,7 +10,15 @@ export class App extends React.Component{
     render(){
         return(
             <div>
-                <Welcome />
+                <TodoList render = {(todoList, removeTodo) => {
+                       return( todoList.map((todos, index) => (
+                        <ul>
+                            <li key={todos.id}>
+                                {todos.title}
+                                <button type="button" name = {index} key={"TodoButton" + todos.id} onClick={removeTodo}>Remove</button>
+                            </li>
+                        </ul>)))
+                }}></TodoList>
             </div>
         );
     };
