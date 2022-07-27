@@ -4,7 +4,7 @@ import React from "react";
 export class TodoList extends React.Component{
     state = {
         todos: [{id: 1, title: "Comprare Latte"}],
-        newTodos: "",
+        newTodos: {id: undefined, title: ""},
     }
 
     handleInputTodo = (element) =>{
@@ -14,10 +14,11 @@ export class TodoList extends React.Component{
     submitNewTodo = () =>{
         this.setState(state =>{
             return{
-                todos: [...state.todos, state.newTodos]
+                todos: [...state.todos, state.newTodos],
+                newTodos: {id: undefined, title: ""},
             }
         })
-        console.log(this.state.todos);
+
     }
 
     render(){
@@ -33,8 +34,8 @@ export class TodoList extends React.Component{
                     </ul>
                 </div>
                 <div>
-                    <input name='todoInput' value={this.state.newTodos.title} onChange={this.handleInputTodo}/>
-                    <button type="button" onClick={this.submitNewTodo} disabled={this.state.newTodos ? false : true}>Add todo</button>
+                    <input name='todoInput' value={this.state.newTodos.title} onChange={this.handleInputTodo} />
+                    <button type="submit" onClick={this.submitNewTodo} disabled={this.state.newTodos ? false : true}>Add todo</button>
                 </div>
             </div>
         )
