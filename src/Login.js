@@ -32,14 +32,18 @@ export class Login extends React.Component{
     }
 
     render(){
+        const PasswordColorButton ={
+            background: this.state.password.length < 8 ? "red" : "green"
+        }
+
         return(
-            <div>
+           <div>
                 <h1>Login</h1>
                 <div>
                     <input type="text" name="username" value={this.state.username} onChange={this.handleInputChange} />
                     <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                     <input type="checkbox" name="remember" checked={this.state.checked} onChange={this.handleInputChange} />
-                    <button type="submit" disabled={(this.state.username === '' || this.state.password === '') ? true : false} onClick={this.onLogin}>Login</button>
+                    <button type="submit" style={PasswordColorButton} disabled={(this.state.username === '' || this.state.password === '') ? true : false} onClick={this.onLogin}>Login</button>
                     <button type="reset" onClick={this.resetInput} >Reset</button>
                 </div>
             </div>
