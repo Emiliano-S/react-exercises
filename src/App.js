@@ -1,6 +1,6 @@
 import React from 'react';
-import { Login } from './Login';
-
+import './index.css';
+import { Welcome } from './Welcome';
 
 export class App extends React.Component{
     onLoginData = (state) =>{
@@ -9,7 +9,7 @@ export class App extends React.Component{
     render(){
         return(
             <div>
-                <Login />
+                <Welcome />
             </div>
         );
     };
