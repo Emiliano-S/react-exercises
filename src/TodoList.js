@@ -4,7 +4,7 @@ import React from "react";
 export class TodoList extends React.Component{
     state = {
         todos: [{id: 1, title: "Comprare Latte"}],
-        newTodos: "",
+        newTodos: {id: undefined, title: ""},
     }
 
     handleInputTodo = (element) =>{
