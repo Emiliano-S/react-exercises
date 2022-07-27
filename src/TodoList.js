@@ -27,21 +27,29 @@ export class TodoList extends React.Component{
         })
     }
 
+    removeToDo = (event) =>{
+        const todoToRemove = event.target.name;
+        this.setState(state =>{
+            return state.todos.splice(todoToRemove,1);
+        })
+    }
+
     render(){
         return(
             <div>
                 <div>
                     <ul>
-                        {this.state.todos.map((todos) => (
+                        {this.state.todos.map((todos, index) => (
                             <li key={todos.id}>
                                 {todos.title}
+                                <button type="button" name = {index} key={"TodoButton" + todos.id} onClick={this.removeToDo}>Remove</button>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div>
                     <input name='todoInput' value={this.state.newTodos.title} onChange={this.handleInputTodo} />
-                    <button type="submit" onClick={this.submitNewTodo} disabled={this.state.newTodos ? false : true}>Add todo</button>
+                    <button type="submit" onClick={this.submitNewTodo} disabled={this.state.newTodos.title  ? false : true}>Add todo</button>
                     <button type="button" onClick={this.resetTodo} disabled={this.state.todos.length > 0 ? false : true}>Reset todo</button>
                 </div>
             </div>
