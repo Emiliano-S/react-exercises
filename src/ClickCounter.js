@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
 
 
@@ -9,6 +9,11 @@ export function ClickCounter({initialValue = 0}){
     function handleCounterIncrement(){
         setValue(val => val + 1);
     }
+    const onCounterChange = (value) =>{console.log(value)}
+
+    useEffect(()=>{
+        onCounterChange(initialV);
+    },[initialV])
 
     return(
         <div>
