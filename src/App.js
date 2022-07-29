@@ -1,5 +1,6 @@
 import React from 'react';
-import { GithubUser } from './GithubUser';
+import { ClickCounter } from './ClickCounter';
+
 import './index.css';
 
 
@@ -10,7 +11,7 @@ export class App extends React.Component{
     render(){
         return(
             <div>
-                <GithubUser username="Emiliano-S"/>
+                <ClickCounter />
             </div>
         );
     };
