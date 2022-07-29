@@ -31,6 +31,7 @@ export function GithubUser ({username}){
         <div>
             <h1>
                 {loading && "Loading..."}
+                {error && "Error"}
                 {user && user}
             </h1>
         </div>
