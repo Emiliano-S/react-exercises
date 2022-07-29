@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import { Welcome } from './Welcome';
+import { Sum } from './Sum';
 
 
 export class App extends React.Component{
@@ -9,7 +9,7 @@ export class App extends React.Component{
     render(){
         return(
             <div>
-                <Welcome name="Emiliano" age={27} />
+                <Sum numbers={[10,10,5,8]}/>
             </div>
         );
     };
