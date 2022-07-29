@@ -1,6 +1,7 @@
 import React from 'react';
+import { ClickCounter } from './ClickCounter';
 import './index.css';
-import { Sum } from './Sum';
+
 
 
 export class App extends React.Component{
@@ -9,7 +10,7 @@ export class App extends React.Component{
     render(){
         return(
             <div>
-                <Sum numbers={[10,10,5,8]}/>
+                <ClickCounter initialValue={10}/>
             </div>
         );
     };
