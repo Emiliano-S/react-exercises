@@ -1,6 +1,6 @@
 import React from 'react';
+import { GithubUser } from './GithubUser';
 import './index.css';
-import { Login } from './Login';
 
 
 
@@ -10,7 +10,7 @@ export class App extends React.Component{
     render(){
         return(
             <div>
-                <Login />
+                <GithubUser username="Emiliano-S"/>
             </div>
         );
     };
